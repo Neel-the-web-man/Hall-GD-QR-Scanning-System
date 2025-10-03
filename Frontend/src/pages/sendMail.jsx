@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import api from "../api.js"; // axios instance with token interceptor
 import "./sendMail.css";
-import Navbar from "../components/Navbar.jsx"; 
+import Navbar from '../components/navbar.jsx' 
 
 const AdminMail = () => {
   const [status, setStatus] = useState("");
