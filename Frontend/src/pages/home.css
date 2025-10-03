@@ -1,0 +1,20 @@
+.home-body-cont {
+    width: 100%;
+    height: 100vh;
+    background-color: #f5f5f5;
+    background-image: url("./home-bg.jpg");
+    background-size: cover;
+    background-position: center;
+}
+.home-body-cont-heading{
+    padding: 50px;
+}
+.home-body-cont-heading h1{
+    color: white;
+    font-size: 40px;
+}
+.home-body-cont-heading p{
+    color: black;
+    font-size: 25px;
+    font-weight: 800;
+}

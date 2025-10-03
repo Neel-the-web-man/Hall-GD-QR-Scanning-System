@@ -1,0 +1,54 @@
+.navbar-gc-qr-system{
+    background-color: white;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav-logo{
+    height: 80px;
+    margin-left: 20px;
+    display: flex;
+    cursor: pointer;
+    z-index: 3;
+}
+.nav-logo h1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.nav-heading{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: absolute;
+    /* top:10px; */
+    width: 100%;
+    text-align: center;
+    z-index: 2;
+}
+.nav-auth{
+    margin-right: 20px;
+    z-index: 3;
+}
+.nav-auth button {
+  margin-left: 10px;
+  padding: 10px 22px;
+  border: none;
+  background: linear-gradient(135deg, #1e90ff, #00c9a7);
+  color: #ffffff;
+  font-size: 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(30, 144, 255, 0.3);
+  cursor:pointer;
+}
+
+.nav-auth button:hover {
+  background: linear-gradient(135deg, #0077ff, #00b894);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 201, 167, 0.4);
+}
+
+.nav-auth button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(0, 201, 167, 0.3);
+}
