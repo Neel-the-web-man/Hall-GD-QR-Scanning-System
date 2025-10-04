@@ -8,7 +8,7 @@ const ScanBoarder = () => {
   const [boarder, setBoarder] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
-  const [confirmed, setConfirmed] = useState(false);
+  const [justConfirmed, setJustConfirmed] = useState(false); // new state
 
   useEffect(() => {
     const fetchBoarder = async () => {
@@ -29,8 +29,9 @@ const ScanBoarder = () => {
   const handleConfirm = async () => {
     try {
       const res = await api.post("/scan", { qrCodeId: qrid });
-      setConfirmed(true);
-      setBoarder(res.data.boarder);
+      setBoarder(res.data.boarder); // update boarder state
+      setJustConfirmed(true); // show ✅ message briefly
+
     } catch (err) {
       console.error("Error confirming meal:", err);
       setError(err.response?.data?.message || "Failed to confirm meal");
@@ -50,12 +51,14 @@ const ScanBoarder = () => {
           <p><strong>Room No:</strong> {boarder.roomNo}</p>
           <p><strong>Phone:</strong> {boarder.phoneNo}</p>
 
-          {boarder.isScanned || confirmed ? (
-            <p className="scan-already">✅ Meal Confirmed.</p>
-          ) : (
+          {!boarder.isScanned && !justConfirmed ? (
             <button className="scan-confirm-btn" onClick={handleConfirm}>
-              Confirm 
+              Confirm
             </button>
+          ) : justConfirmed ? (
+            <p className="scan-confirmed">✅ Meal Confirmed.</p>
+          ) : (
+            <p className="scan-already">❌ Meal Already Taken.</p>
           )}
         </div>
       ) : (
