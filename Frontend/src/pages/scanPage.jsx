@@ -18,18 +18,20 @@ const ScanPage = () => {
       try {
         const devices = await Html5Qrcode.getCameras();
         if (!isMounted) return;
-
         if (devices && devices.length) {
-          const cameraId = devices[0].id;
-          await html5QrCode.start(
-            cameraId,
-            { fps: 10, qrbox: 250 },
-            onScanSuccess,
-            () => {}
-          );
-        } else {
-          setMessage("No camera found");
-        }
+        // Prefer back camera
+        const backCamera = devices.find(device => /back|rear|environment/i.test(device.label));
+        const cameraId = backCamera ? backCamera.id : devices[0].id;
+
+        await html5QrCode.start(
+          cameraId,
+          { fps: 10, qrbox: 250 },
+          onScanSuccess,
+          () => {}
+        );
+} else {
+  setMessage("No camera found");
+}
       } catch (err) {
         console.error("Scanner start error:", err);
         setMessage("Camera access error");
