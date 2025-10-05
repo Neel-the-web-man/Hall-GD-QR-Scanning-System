@@ -6,6 +6,9 @@ import AdminDashboard from "./pages/adminDashboard.jsx";
 import ScanBoarder from "./pages/scanBoarder.jsx";
 import ProtectedRoute from "./components/protectedRoute.jsx";
 import SendMail from "./pages/sendMail.jsx";
+import ScanPage from "./pages/scanPage.jsx";
+import DownloadData from "./pages/downloadData.jsx";
+
 import "./App.css";
 function App() {
   return (
@@ -26,6 +29,16 @@ function App() {
         <Route path="/admin/scan/boarder/:qrid" element={
             <ProtectedRoute>
               <ScanBoarder />
+            </ProtectedRoute>
+          } />
+        <Route path="/admin/scanner" element={
+            <ProtectedRoute>
+              <ScanPage />
+            </ProtectedRoute>
+          } />
+        <Route path="/admin/downloaddata" element={
+            <ProtectedRoute>
+              <DownloadData />
             </ProtectedRoute>
           } />
       </Routes>

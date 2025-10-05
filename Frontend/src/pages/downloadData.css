@@ -1,0 +1,50 @@
+/* Page container */
+.admin-export-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #eef2f7; /* soft gray-blue */
+  padding: 20px;
+}
+
+/* Heading */
+.admin-export-heading {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Button */
+.admin-export-button {
+  background: #28a745; /* green for download */
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: background 0.2s, transform 0.2s;
+}
+
+.admin-export-button:hover {
+  background: #1e7e34;
+  transform: translateY(-2px);
+}
+
+.admin-export-button:active {
+  transform: translateY(0);
+}
+
+/* Status message */
+.admin-export-status {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #555;
+  text-align: center;
+}
