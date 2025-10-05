@@ -7,11 +7,12 @@ const connectDb = require("./config/db.js");
 const adminRoutes = require("./routes/admin");
 const scanRoutes = require("./routes/scan");
 const boarderRoutes = require("./routes/boarders");
+const exportRoutes = require("./routes/export");
 
 const app = express();
 connectDb();
 app.use(cors({
-  origin: "http://localhost:5173", 
+  origin: "http://57.159.29.30/", 
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true
@@ -21,6 +22,7 @@ app.use(express.json());
 app.use("/admin", adminRoutes);
 app.use("/scan", scanRoutes);
 app.use("/boarders", boarderRoutes);
+app.use("/export", exportRoutes);
 app.listen(process.env.PORT||5000, () => {
   console.log(`Server running on port ${process.env.PORT}`);
 });

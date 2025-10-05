@@ -7,7 +7,7 @@ async function generateAndAssignQRCode(boarder){
     boarder.qrCodeId=qrId;
     await boarder.save();
 
-    const qrData="http://localhost:3000/scan/boarder/"+qrId;
+    const qrData=qrId;
     try {
         const qrBuffer = await QRCode.toBuffer(qrData);
         return qrBuffer;
